@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs/RaylibPong
+/RaylibPong/x64
+/x64
