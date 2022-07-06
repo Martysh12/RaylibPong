@@ -24,7 +24,7 @@ void Ball::update(void)
 
 	if ((m_y - ballRadius) < 0)
 	{
-		m_y = -m_y;
+		m_y = m_y + ballRadius * 2;
 		m_vy = -m_vy;
 
 		PlaySound(m_sndCollideWall);

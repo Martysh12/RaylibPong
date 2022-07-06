@@ -87,7 +87,10 @@ void Game::update(void)
     {
         // Check if player has pressed the start key
         if (IsKeyPressed(keyStartGame))
+        {
             m_startUpdating = true;
+            PlaySound(m_sndStart);
+        }
     }
 }
 
