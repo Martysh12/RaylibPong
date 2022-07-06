@@ -5,6 +5,8 @@
 #include "paddle.h"
 #include "ball.h"
 
+#include <iostream>
+
 #include "raylib.h"
 
 class Game
@@ -12,6 +14,8 @@ class Game
 public:
 	Game();
 	~Game();
+
+	void initSound(void);
 
 	void start(void);
 	void update(void);
@@ -26,7 +30,13 @@ private:
 
 	Ball m_ball;
 
+	int m_ballIFrames;
+
 	bool m_startUpdating;
+
+	Sound m_sndCollidePaddle;
+	Sound m_sndStart;
+	Sound m_sndLose;
 };
 
 

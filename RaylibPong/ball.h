@@ -10,6 +10,8 @@ public:
 	Ball();
 	~Ball();
 
+	void loadSounds(void);
+
 	void update(void);
 	void render(void);
 	
@@ -28,4 +30,6 @@ private:
 
 	int m_vx;
 	int m_vy;
+
+	Sound m_sndCollideWall;
 };
