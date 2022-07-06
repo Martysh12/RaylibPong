@@ -5,6 +5,8 @@
 #include "paddle.h"
 #include "ball.h"
 
+#include <iostream>
+
 #include "raylib.h"
 
 class Game
