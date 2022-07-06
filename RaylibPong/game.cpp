@@ -62,6 +62,8 @@ void Game::update(void)
         {
             m_ball.flipXVel();
             m_ball.update();
+
+            PlaySound(m_sndCollidePaddle);
         }
 
         // Check if ball is out of bounds and increase scores
@@ -72,10 +74,12 @@ void Game::update(void)
             case 1:
                 m_rightPaddle.increaseScore();
                 resetKeepScore();
+                PlaySound(m_sndLose);
                 break;
             case 2:
                 m_leftPaddle.increaseScore();
                 resetKeepScore();
+                PlaySound(m_sndLose);
                 break;
         }
     }
