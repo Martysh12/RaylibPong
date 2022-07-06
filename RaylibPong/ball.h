@@ -28,4 +28,6 @@ private:
 
 	int m_vx;
 	int m_vy;
+
+	Sound m_sndCollideWall;
 };

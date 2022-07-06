@@ -6,6 +6,7 @@ Ball::Ball() :
 	m_vx(ballSpeed),
 	m_vy(ballSpeed)
 {
+	m_sndCollideWall = LoadSound("sounds\\collide_wall.wav");
 }
 
 Ball::~Ball()
@@ -21,11 +22,15 @@ void Ball::update(void)
 	{
 		m_y = -m_y;
 		m_vy = -m_vy;
+
+		PlaySound(m_sndCollideWall);
 	}
 	else if ((m_y + ballRadius) > screenHeight)
 	{
 		m_y = screenHeight * 2 - ballRadius * 2 - m_y;
 		m_vy = -m_vy;
+
+		PlaySound(m_sndCollideWall);
 	}
 }
 

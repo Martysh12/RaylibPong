@@ -34,7 +34,6 @@ private:
 
 	Sound m_sndCollidePaddle;
 	Sound m_sndStart;
-	Sound m_sndCollideWall;
 	Sound m_sndLose;
 };
 
