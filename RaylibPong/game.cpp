@@ -7,6 +7,17 @@ Game::Game() :
 {
 	InitWindow(screenWidth, screenHeight, gameTitle);
 
+    initSound();
+
+	SetTargetFPS(60);
+}
+
+Game::~Game()
+{
+}
+
+void Game::initSound(void)
+{
     InitAudioDevice();
 
     if (!IsAudioDeviceReady())
@@ -14,12 +25,6 @@ Game::Game() :
         std::cerr << "There was an error while initializing the audio device!" << std::endl;
         exit(1);
     }
-
-	SetTargetFPS(60);
-}
-
-Game::~Game()
-{
 }
 
 void Game::start(void)

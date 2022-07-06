@@ -15,6 +15,8 @@ public:
 	Game();
 	~Game();
 
+	void initSound(void);
+
 	void start(void);
 	void update(void);
 	void render(void);
