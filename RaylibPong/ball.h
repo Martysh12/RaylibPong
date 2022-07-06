@@ -10,6 +10,8 @@ public:
 	Ball();
 	~Ball();
 
+	void loadSounds(void);
+
 	void update(void);
 	void render(void);
 	

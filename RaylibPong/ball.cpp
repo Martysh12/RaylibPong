@@ -6,11 +6,15 @@ Ball::Ball() :
 	m_vx(ballSpeed),
 	m_vy(ballSpeed)
 {
-	m_sndCollideWall = LoadSound("sounds\\collide_wall.wav");
 }
 
 Ball::~Ball()
 {
+}
+
+void Ball::loadSounds(void)
+{
+	m_sndCollideWall = LoadSound("sounds\\collide_wall.wav");
 }
 
 void Ball::update(void)

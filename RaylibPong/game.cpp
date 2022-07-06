@@ -29,6 +29,7 @@ void Game::initSound(void)
     m_sndCollidePaddle = LoadSound("sounds\\collide_paddle.wav");
     m_sndStart         = LoadSound("sounds\\start.wav");
     m_sndLose          = LoadSound("sounds\\lose.wav");
+    m_ball.loadSounds();
 }
 
 void Game::start(void)
