@@ -30,6 +30,8 @@ private:
 
 	Ball m_ball;
 
+	int m_ballIFrames;
+
 	bool m_startUpdating;
 
 	Sound m_sndCollidePaddle;

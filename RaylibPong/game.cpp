@@ -3,7 +3,8 @@
 Game::Game() :
     m_leftPaddle(false),
     m_rightPaddle(true),
-    m_startUpdating(false)
+    m_startUpdating(false),
+    m_ballIFrames(0)
 {
 	InitWindow(screenWidth, screenHeight, gameTitle);
 
@@ -58,12 +59,14 @@ void Game::update(void)
         m_ball.update();
 
         // Perform collision checks
-        if (m_leftPaddle.collideRec(m_ball.getRec()) || m_rightPaddle.collideRec(m_ball.getRec()))
+        if ((m_leftPaddle.collideRec(m_ball.getRec()) || m_rightPaddle.collideRec(m_ball.getRec())) && m_ballIFrames <= 0)
         {
             m_ball.flipXVel();
             m_ball.update();
 
             PlaySound(m_sndCollidePaddle);
+
+            m_ballIFrames = 15;
         }
 
         // Check if ball is out of bounds and increase scores
@@ -82,6 +85,9 @@ void Game::update(void)
                 PlaySound(m_sndLose);
                 break;
         }
+
+        if (m_ballIFrames > 0)
+            m_ballIFrames--;
     }
     else
     {
@@ -125,6 +131,8 @@ void Game::resetKeepScore(void)
 {
     m_leftPaddle.resetKeepScore();
     m_rightPaddle.resetKeepScore();
+
+    m_ballIFrames = 0;
 
     m_ball.reset();
 }
