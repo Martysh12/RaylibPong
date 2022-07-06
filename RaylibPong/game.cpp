@@ -25,6 +25,11 @@ void Game::initSound(void)
         std::cerr << "There was an error while initializing the audio device!" << std::endl;
         exit(1);
     }
+
+    m_sndCollidePaddle = LoadSound("sounds\\collide_paddle.wav");
+    m_sndStart         = LoadSound("sounds\\start.wav");
+    m_sndCollideWall   = LoadSound("sounds\\collide_wall.wav");
+    m_sndLose          = LoadSound("sounds\\lose.wav");
 }
 
 void Game::start(void)

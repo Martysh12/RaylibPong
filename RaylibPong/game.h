@@ -31,6 +31,11 @@ private:
 	Ball m_ball;
 
 	bool m_startUpdating;
+
+	Sound m_sndCollidePaddle;
+	Sound m_sndStart;
+	Sound m_sndCollideWall;
+	Sound m_sndLose;
 };
 
 
